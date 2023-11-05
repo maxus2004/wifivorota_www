@@ -1,0 +1,40 @@
+body {
+    width: 30rem;
+    margin: auto;
+    margin-top: 2rem;
+    font-family: sans-serif;
+}
+
+@media (max-aspect-ratio: 1) {
+    body {
+        width: 90vw;
+        margin-top: 5vw;
+    }
+}
+
+.setting_input {
+    box-sizing: border-box;
+    width: 100%;
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.setting_label {
+    font-size: 1.5rem;
+}
+
+#submit {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    width: 100%;
+    font-size: 2rem;
+}
+
+#update_log{
+    font-size:1.5rem; 
+}
+
+#back_btn {
+    float: right;
+    font-size: 1.5rem;
+}

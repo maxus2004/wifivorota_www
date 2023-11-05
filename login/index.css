@@ -1,0 +1,29 @@
+body {
+    width: 30rem;
+    margin: auto;
+    margin-top: 2rem;
+    font-family: sans-serif;
+}
+
+@media (max-aspect-ratio: 1) {
+    body {
+        width: 90vw;
+        margin-top: 5vw;
+    }
+}
+
+.input {
+    box-sizing: border-box;
+    width: 100%;
+    font-size: 2rem;
+}
+
+.label {
+    font-size: 1.5rem;
+}
+
+#submit {
+    margin-top: 1rem;
+    width: 100%;
+    font-size: 2rem;
+}
