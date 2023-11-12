@@ -11,7 +11,7 @@ window.onload = async function () {
 async function save_pressed(e) {
     e.preventDefault();
     parameters = {}
-    for(elem of document.getElementsByClassName("setting_input")){
+    for(elem of document.getElementById("form").getElementsByClassName("setting_input")){
         parameters[elem.id] = elem.value
     }
     result = await api("config",parameters)

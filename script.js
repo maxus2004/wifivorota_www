@@ -19,11 +19,7 @@ function toggleNightMode() {
     }
 }
 
-function streamLoop() {
-
-}
-
-window.onload = async function () {
+async function start(){
     document.getElementById("video").src = "/stream?login=" + login + "&password=" + password
 
     response = await api("config")
@@ -41,3 +37,10 @@ window.onload = async function () {
         document.getElementById("nightmode_btn").innerText = "Ночной режим включен"
     }
 }
+
+document.addEventListener("visibilitychange", (event) => {
+    if (document.visibilityState == "visible") {
+        start()
+    }
+})
+window.onload = start
