@@ -46,11 +46,11 @@
             <input type="text" class="setting_input" id="btn3_name"> </label><br>
         <input type="submit" value="Сохранить" id="submit">
     </form>
-    <button class="setting_input" onclick="api('reboot')">Перезагрузить</button>
-    <button class="setting_input" onclick="firmware_update()">
+    <button class="setting_input" id="reboot_btn" onclick="api('reboot')">Перезагрузить</button>
+    <button class="setting_input" id="update_btn" onclick="firmware_update()">
         Обновить прошивку
     </button>
-    <button class="setting_input" onclick="logout()">Выйти из аккаунта</button>
+    <button class="setting_input" id="logout_btn" onclick="logout()">Выйти из аккаунта</button>
 </body>
 
 </html>
