@@ -1,4 +1,4 @@
-import api from '/common.js'
+import {api} from '/common.js'
 
 window.onload = async function () {
     let current_version = (await api('info')).get('version')

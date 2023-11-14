@@ -1,4 +1,4 @@
-import api from '/common.js'
+import {api} from '/common.js'
 
 window.onload = async function () {
     document.getElementById('reboot_btn').onclick = reboot
