@@ -7,7 +7,7 @@ window.onload = async function () {
     api("camera_config", { framesize: 13 })
 }
 
-async function goBack(){
+async function goBack() {
     await api("camera_config", { framesize: originalFramesize })
-    document.location='/'
+    document.location = '/'
 }

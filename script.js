@@ -19,22 +19,26 @@ function toggleNightMode() {
     }
 }
 
-async function start(){
+async function start() {
     document.getElementById("video").src = "/stream?login=" + login + "&password=" + password
 
-    response = await api("config")
+    config = await api("config")
+    document.getElementById("buttons").innerHTML = ''
     for (var i = 0; i < 4; i++) {
-        var btn_name = response.get("btn"+i+"_name")
+        var btn_name = config.get("btn" + i + "_name")
         console.log()
-        if(btn_name=="")continue;
-        document.getElementById("buttons").innerHTML+='<button class="door_button" onclick="api(\'press_btn\',{id:'+i+'})">'+btn_name+'</button>'
+        if (btn_name == "") continue;
+        document.getElementById("buttons").innerHTML += '<button class="door_button" onclick="api(\'press_btn\',{id:' + i + '})">' + btn_name + '</button>'
     }
 
-    response = await api("camera_config")
-    document.getElementById("resolution_select").value = response.get("framesize")
-    if (response.get("xclk") == nightmode_xclk) {
+    camera_config = await api("camera_config")
+    document.getElementById("resolution_select").value = camera_config.get("framesize")
+    if (camera_config.get("xclk") == nightmode_xclk) {
         nightMode = true
         document.getElementById("nightmode_btn").innerText = "Ночной режим включен"
+    } else {
+        nightMode = false
+        document.getElementById("nightmode_btn").innerText = "Ночной режим выключен"
     }
 }
 

@@ -1,13 +1,16 @@
 <!DOCTYPE html>
-<html>
+<html lang="ru">
 
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <title>WiFiVorota - Settings</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <link rel="apple-touch-icon" sizes="192x192" href="/favicon.png">
-    <link rel="manifest" href="/manifest.json" />
-    <script>navigator.serviceWorker.register("/service_worker.js")</script>
+    <link rel="manifest" href="/manifest.json">
+    <script>
+        navigator.serviceWorker.register("/service_worker.js");
+    </script>
     <link rel="stylesheet" href="index.css">
     <script src="/common.js"></script>
     <script src="script.js"></script>
@@ -19,50 +22,35 @@
     <form id="form">
         <label class="setting_label">
             логин:
-            <input type="text" class="setting_input" id="user_login">
-        </label><br>
-
+            <input type="text" class="setting_input" id="user_login"> </label><br>
         <label class="setting_label">
             пароль:
-            <input type="text" class="setting_input" id="user_password">
-        </label><br>
-
+            <input type="text" class="setting_input" id="user_password"> </label><br>
         <label class="setting_label">
             название WiFi:
-            <input type="text" class="setting_input" id="wifi_ssid">
-        </label><br>
-
+            <input type="text" class="setting_input" id="wifi_ssid"> </label><br>
         <label class="setting_label">
             пароль WiFi:
-            <input type="text" class="setting_input" id="wifi_password">
-        </label><br>
-
+            <input type="text" class="setting_input" id="wifi_password"> </label><br>
         <label class="setting_label">
             Кнопка 1:
-            <input type="text" class="setting_input" id="btn0_name">
-        </label><br>
-
+            <input type="text" class="setting_input" id="btn0_name"> </label><br>
         <label class="setting_label">
             Кнопка 2:
-            <input type="text" class="setting_input" id="btn1_name">
-        </label><br>
-
+            <input type="text" class="setting_input" id="btn1_name"> </label><br>
         <label class="setting_label">
             Кнопка 3:
-            <input type="text" class="setting_input" id="btn2_name">
-        </label><br>
-
+            <input type="text" class="setting_input" id="btn2_name"> </label><br>
         <label class="setting_label">
             Кнопка 4:
-            <input type="text" class="setting_input" id="btn3_name">
-        </label><br>
-
+            <input type="text" class="setting_input" id="btn3_name"> </label><br>
         <input type="submit" value="Сохранить" id="submit">
     </form>
     <button class="setting_input" onclick="api('reboot')">Перезагрузить</button>
-    <button class="setting_input" onclick="firmware_update()">Обновить прошивку</button>
+    <button class="setting_input" onclick="firmware_update()">
+        Обновить прошивку
+    </button>
     <button class="setting_input" onclick="logout()">Выйти из аккаунта</button>
-
 </body>
 
 </html>
