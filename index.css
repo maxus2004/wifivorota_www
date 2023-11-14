@@ -41,7 +41,7 @@ td{
     padding: 0.25rem;
 }
 
-@media (max-aspect-ratio: 1) {
+@media (max-aspect-ratio: 1/1) {
     body {
         width: calc(100vw - 1rem);
         height: initial;
