@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <title>WiFiVorota</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <link rel="apple-touch-icon" sizes="192x192" href="/favicon.png">
+    <link rel="manifest" href="/manifest.json">
+    <script>
+        navigator.serviceWorker.register("/service_worker.js");
+    </script>
+    <link rel="stylesheet" href="index.css">
+    <script type="module" src="script.js"></script>
+</head>
+
+<body>
+    <img id="video" onclick="document.location='/zoom/'" src="/no-video.png" alt="здесь должно быть видео с камеры">
+    <div id="controls">
+        <div id="buttons"></div>
+        <table>
+            <tbody>
+                <tr>
+                    <td colspan="2">
+                        <button class="btn" id="nightmode_btn">
+                            Ночной режим выключен
+                        </button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <button class="btn" id="settings_btn">
+                            Настройки
+                        </button>
+                    </td>
+                    <td>
+                        <select id="resolution_select">
+                            <option value="13">1600x1200</option>
+                            <option value="12">1280x1024</option>
+                            <option value="11">1280x720</option>
+                            <option value="10">1024x768</option>
+                            <option value="9">800x600</option>
+                            <option value="8">640x480</option>
+                            <option value="7">480x320</option>
+                            <option value="6">400x296</option>
+                            <option value="5">320x240</option>
+                        </select>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+
+</html>
