@@ -1,4 +1,4 @@
-import {api, login, password} from '/common.js'
+import {api, login, password} from '/camera_api.js'
 
 let originalFramesize = 6
 

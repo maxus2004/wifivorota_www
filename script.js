@@ -1,4 +1,4 @@
-import { api, login, password } from '/common.js'
+import { api, login, password } from '/camera_api.js'
 
 var daymode_xclk = 20
 var nightmode_xclk = 2
@@ -35,9 +35,15 @@ async function start() {
     document.getElementById('buttons').innerHTML = ''
     for (var i = 0; i < 4; i++) {
         var btn_name = config.get('btn' + i + '_name')
-        console.log()
         if (btn_name == '') continue
-        document.getElementById('buttons').innerHTML += '<button class="door_button" onclick="api(\'press_btn\',{id:\' + i + \'})">' + btn_name + '</button>'
+        let button = document.createElement("button")
+        button.className = 'door_button'
+        button.id='doorbtn' + i
+        button.innerText = btn_name;
+        (function(i){
+            button.onclick = function(){api('press_btn',{id:i})}
+        })(i)
+        document.getElementById('buttons').appendChild(button)
     }
 
     let camera_config = await api('camera_config')

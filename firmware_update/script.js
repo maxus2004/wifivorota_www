@@ -1,4 +1,4 @@
-import {api} from '/common.js'
+import {api} from '/camera_api.js'
 
 window.onload = async function () {
     let current_version = (await api('info')).get('version')
