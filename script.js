@@ -1,4 +1,4 @@
-import { api, login, password } from '/camera_api.js'
+import {api, getStreamURL} from '/camera_api.js'
 
 var daymode_xclk = 20
 var nightmode_xclk = 2
@@ -29,7 +29,7 @@ async function start() {
     document.getElementById('settings_btn').onclick = openSettings
     document.getElementById('resolution_select').onchange = changeResolution
 
-    document.getElementById('video').src = '/stream?login=' + login + '&password=' + password
+    document.getElementById('video').src = getStreamURL()
 
     let config = await api('config')
     document.getElementById('buttons').innerHTML = ''
