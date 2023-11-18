@@ -36,12 +36,12 @@ async function start() {
     for (var i = 0; i < 4; i++) {
         var btn_name = config.get('btn' + i + '_name')
         if (btn_name == '') continue
-        let button = document.createElement("button")
+        let button = document.createElement('button')
         button.className = 'door_button'
-        button.id='doorbtn' + i
+        button.id = 'doorbtn' + i
         button.innerText = btn_name;
-        (function(i){
-            button.onclick = function(){api('press_btn',{id:i})}
+        (function (i) {
+            button.onclick = function () { api('press_btn', { id: i }) }
         })(i)
         document.getElementById('buttons').appendChild(button)
     }
