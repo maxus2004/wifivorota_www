@@ -3,7 +3,7 @@ export { getStreamURL, api }
 var login = localStorage.getItem('login')
 var password = localStorage.getItem('password')
 
-var api_server = 'https://vorota.servermaksa.tk'
+var api_server = 'https://vorota.servermaksa.ru'
 
 async function api(cmd, params) {
     if (login == null || password == null || login == '') {
