@@ -23,5 +23,5 @@ async function api(cmd, params) {
 }
 
 function getStreamURL() {
-    return `${api_server}/stream?login=${login}&password=${password}`
+    return `${api_server}/stream/?login=${login}&password=${password}&rand=${Math.floor(Math.random() * 1000000)}`
 }
