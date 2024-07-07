@@ -1,0 +1,173 @@
+{% extends "base.html" %}
+
+{% block head %}
+<title>WiFiVorota - Settings</title>
+<link rel="stylesheet" href="/static/css/settings.css">
+<script type="module" src="/static/js/camera_settings.js"></script>
+<script type="module" src="/static/js/glazik.js"></script>
+{% endblock %}
+
+{% block content %}
+
+{% include 'sidebar.html' %}
+
+<img src="/static/back.png" id="back-button" onclick="window.location='/{{lang_code}}/home/'">
+
+
+<div id="form">
+    <table>
+        <tr>
+            <td class="image-cell" colspan="3"> {{camera_settings.select_cam}}</td> 
+        </tr>
+        <tr>
+            <td> 
+                <select class="btn" id="camera_select"></select>
+            </td>
+            <td class=addremove>
+                <button class="btn" id="camera_add"> {{camera_settings.add_cam}} </button>
+            </td>
+            <td class=addremove>
+                <button class="btn" id="camera_delete"> {{camera_settings.delete_cam}} </button>
+            </td>
+        </tr>
+    </table>
+
+    <table class="form-table">
+        <tr>
+            <td class="image-cell"></td>
+            <td class="label">{{camera_settings.login_label}}</td> 
+        </tr>
+        <tr>
+            <td class="image-cell">
+                <img src="/static/user.png" class="image">
+            </td>
+            <td>
+                <input type="text" name="user_login" class="input camera-param">
+            </td>
+        </tr>
+
+        <tr>
+            <td class="image-cell"></td>
+            <td class="label">{{camera_settings.password_label}}</td> 
+        </tr>
+        <tr>
+            <td class="image-cell">
+                <img src="/static/password.png" class="image">
+            </td>
+            <td>
+                <input id="password-input" type="password" name="user_password" class="input camera-param">
+            </td>
+            <td class="image-cell">
+                <img src="/static/eye-open.png" class="image" id="password_eye">
+            </td>
+        </tr>
+
+        <tr>
+            <td class="image-cell"></td>
+            <td class="label">{{camera_settings.wifi_name_label}}</td> 
+        </tr>
+        <tr>
+            <td class="image-cell">
+                <img src="/static/wifi.png" class="image">
+            </td>
+            <td>
+                <input type="text" name="wifi_ssid" class="input camera-param">
+            </td>
+        </tr>
+
+        <tr>
+            <td class="image-cell"></td>
+            <td class="label">{{camera_settings.wifi_pass_label}}</td> 
+        </tr>
+        <tr>
+            <td class="image-cell">
+                <img src="/static/password.png" class="image">
+            </td>
+            <td>
+                <input type="text" name="wifi_password" class="input camera-param">
+            </td>
+        </tr>
+
+        <tr>
+            <td class="image-cell"></td>
+            <td class="label">{{camera_settings.button1_label}}</td> 
+        </tr>
+        <tr>
+            <td class="image-cell">
+                <img src="/static/button.png" class="image">
+            </td>
+            <td>
+                <input type="text" name="btn0_name" class="input camera-param">
+            </td>
+        </tr>
+
+        <tr>
+            <td class="image-cell"></td>
+            <td class="label">{{camera_settings.button2_label}}</td> 
+        </tr>
+        <tr>
+            <td class="image-cell">
+                <img src="/static/button.png" class="image">
+            </td>
+            <td>
+                <input type="text" name="btn1_name" class="input camera-param">
+            </td>
+        </tr>
+
+        <tr>
+            <td class="image-cell"></td>
+            <td class="label">{{camera_settings.button3_label}}</td> 
+        </tr>
+        <tr>
+            <td class="image-cell">
+                <img src="/static/button.png" class="image">
+            </td>
+            <td>
+                <input type="text" name="btn2_name" class="input camera-param">
+            </td>
+        </tr>
+
+        <tr>
+            <td class="image-cell"></td>
+            <td class="label">{{camera_settings.button4_label}}</td> 
+        </tr>
+        <tr>
+            <td class="image-cell">
+                <img src="/static/button.png" class="image">
+            </td>
+            <td>
+                <input type="text" name="btn3_name" class="input camera-param">
+            </td>
+        </tr>
+        
+        <tr>
+            <td class="image-cell"></td>
+            <td>
+                <input class="btn" type="submit" value="{{camera_settings.save_button}}" id="submit">
+            </td>
+        </tr>
+
+        <tr>
+            <td class="image-cell"></td>
+            <td>
+                <button class="setting_input btn" id="reboot_btn" onclick="api('reboot')">{{camera_settings.reboot_button}}</button>
+            </td>
+        </tr>
+
+        <tr>
+            <td class="image-cell"></td>
+            <td>
+                <button class="setting_input btn" id="update_btn" onclick="firmware_update()">{{camera_settings.update_firmware}}</button>
+            </td>
+        </tr>
+
+        <tr>
+            <td class="image-cell"></td>
+            <td>
+                <button class="setting_input btn" id="direct_control_btn" onclick="direct_control()">{{camera_settings.direct_control}}</button>
+            </td>
+        </tr>
+    </table>
+</div>
+
+{% endblock %}

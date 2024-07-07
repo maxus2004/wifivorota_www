@@ -1,0 +1,111 @@
+{% extends "base.html" %}
+
+{% block head %}
+<title>WiFiVorota - Account Settings</title>
+<link rel="stylesheet" href="/static/css/settings.css">
+<script type="module" src="/static/js/account_settings.js"></script>
+<script type="module" src="/static/js/glazik.js"></script>
+{% endblock %}
+
+{% block content %}
+
+{% include 'sidebar.html' %}
+
+<img src="/static/back.png" id="back-button" onclick="window.location='/{{lang_code}}/home/'">
+<form id="form" method="post">
+    <table class="form-table">
+        <tr>
+            <td class="image-cell"></td>
+            <td class="label">{{account_settings.login_text}}</td>
+        </tr>
+        <tr>
+            <td class="image-cell">
+                <img src="/static/user.png" class="image">
+            </td>
+            <td>
+                <input type="text" name="login" class="input" disabled value="{{acc_login}}">
+            </td>
+        </tr>
+
+        <tr>
+            <td class="image-cell"></td>
+            <td class="label">{{account_settings.password_text}}</td>
+        </tr>
+        <tr>
+            <td class="image-cell">
+                <img src="/static/password.png" class="image">
+            </td>
+            <td>
+                <input type="password" id="password-input" name="password" class="input" readonly
+                    onfocus="this.removeAttribute('readonly');">
+            </td>
+            <td class="image-cell">
+                <img src="/static/eye-open.png" class="image" id="password_eye">
+            </td>
+        </tr>
+
+        <tr>
+            <td class="image-cell"></td>
+            <td class="label">{{account_settings.password_again}}</td>
+        </tr>
+        <tr>
+            <td class="image-cell">
+                <img src="/static/password.png" class="image">
+            </td>
+            <td>
+                <input type="password" name="password2" class="input" readonly
+                    onfocus="this.removeAttribute('readonly');">
+            </td>
+        </tr>
+
+        <tr>
+            <td class="image-cell"></td>
+            <td class="label">{{account_settings.name_text}}</td>
+        </tr>
+        <tr>
+            <td class="image-cell">
+                <img src="/static/name.png" class="image">
+            </td>
+            <td>
+                <input type="text" name="name" class="input" value="{{acc_name}}">
+            </td>
+        </tr>
+
+        <tr>
+            <td class="image-cell"></td>
+            <td class="label">{{account_settings.mail_text}}</td>
+        </tr>
+        <tr>
+            <td class="image-cell">
+                <img src="/static/mail.png" class="image">
+            </td>
+            <td>
+                <input type="text" name="email" class="input" value="{{acc_mail}}">
+            </td>
+        </tr>
+        <tr>
+
+        <tr>
+            <td></td>
+            <td>
+                <span class="error-message">{{error_message}}</span>
+            </td>
+        </tr>
+
+        <tr>
+            <td class="image-cell"></td>
+            <td>
+                <input type="submit" value="{{account_settings.save_button}}" id="submit" class="btn">
+            </td>
+        </tr>
+
+        <tr>
+            <td class="image-cell"></td>
+            <td>
+                <button class="btn" id="logout_btn">{{account_settings.logout_button}}</button>
+            </td>
+        </tr>
+    </table>
+</form>
+
+{% endblock %}

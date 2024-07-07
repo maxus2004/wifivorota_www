@@ -1,0 +1,76 @@
+[login]
+login_button = "Sign in"
+login_text = "Login"
+password_text = "Password"
+register_button = "Registration"
+remember_password = "Remember password"
+recover_password = "Restore password"
+entrance_button = "Entrance"
+
+[register]
+entrance_page = "Entrance"
+register_page = "Registration"
+register_button = "Register"
+login_text = "Login"
+password_text = "Password"
+password_again = "Repeat password"
+name_text = "Name"
+mail_text = "Mail"
+remember_password = "Restore password"
+
+[home]
+night_vision_on = "Night vision ON"
+night_vision_off = "Night vision OFF"
+
+[sidebar]
+home_button = "Home"
+cam_settings_button = "Cameras settings"
+acc_settings_button = "Account settings"
+hello_label = "Hello"
+copyright = "WiFi-Vorota - project by Doroshin Maksim ICS6-43B"
+
+[camera_settings]
+login_label = "Camera ID"
+password_label = "Password"
+wifi_name_label = "Name of WiFi"
+wifi_pass_label = "Password of WiFi"
+button1_label = "Button1"
+button2_label = "Button2"
+button3_label = "Button3"
+button4_label = "Button4"
+save_button = "Save"
+reboot_button = "Reboot camera"
+update_firmware = "Update firmware"
+direct_control = "Direct control"
+select_cam = "Select camera"
+add_cam = "+"
+delete_cam = "-"
+
+[account_settings]
+save_button = "Save"
+logout_button = "Logout"
+login_text = "Login"
+password_text = "Password"
+password_again = "Repeat password"
+name_text = "Name"
+mail_text = "Mail"
+
+[recover]
+entrance_button = "Entrance"
+register_button = "Registration"
+recover_password = "Restore password"
+mail_text = "Login"
+
+[firmware_update]
+installed_version="Installed version"
+latest_version="Latest version"
+firmware_url="Firmware URL"
+update_firmware="Update firmware"
+
+[errors]
+wrong_login="Wrong login"
+wrong_password="Wrong password"
+different_passwords="Passwords don't match"
+user_exists="User already exists"
+login_short="Login is too short"
+password_short="Password is too short"

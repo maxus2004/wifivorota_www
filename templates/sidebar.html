@@ -1,0 +1,17 @@
+<script src="/static/js/sidebar.js"></script>
+<link rel="stylesheet" href="/static/css/sidebar.css">
+
+<div class="side-panel" id="side-panel">
+    <div id="close-panel-button" class="side-button-2">+</div>
+    <div class="side-title">{{ sidebar.hello_label }}, {{user_name}} </div>
+    <button onclick="document.location='/{{lang_code}}/home/'" class="btn sidebar-btn"> {{ sidebar.home_button }} </button>
+    <button onclick="document.location='/{{lang_code}}/account_settings'" class="btn sidebar-btn"> {{ sidebar.acc_settings_button }} </button>
+    <button onclick="document.location='/{{lang_code}}/camera_settings'" class="btn sidebar-btn"> {{ sidebar.cam_settings_button }} </button>
+    <img src="/static/language.png" id="language-button" class="image">
+    <img src="/static/logout.png" id="logout-button" class="image">
+    <h1 style="font-size: 1.5rem; color:lightgray; position: absolute; bottom: 1rem; left: 1rem;">{{ sidebar.copyright }}</h1>
+</div>
+
+<div id="outside-panel"></div>
+
+<img src="/static/panel.png" id="panel-button">

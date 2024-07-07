@@ -1,0 +1,19 @@
+{
+    "name": "Ворота",
+    "start_url": "/",
+    "icons": [
+        {
+            "src": "/static/favicon.png",
+            "sizes": "192x192",
+            "type": "image/png",
+            "purpose": "maskable any"
+        },
+        {
+            "src": "/static/favicon-512.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "maskable any"
+        }
+    ],
+    "display": "standalone"
+}

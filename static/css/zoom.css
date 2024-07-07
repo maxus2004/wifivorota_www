@@ -1,0 +1,17 @@
+body {
+    margin: 0;
+}
+
+#scroll{
+    overflow: scroll;
+}
+
+#video {
+    height: 100vh;
+}
+
+#video.loading{
+    object-fit: none;
+    object-position: center;
+    aspect-ratio: 4/3;
+}

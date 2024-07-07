@@ -1,0 +1,81 @@
+[login]
+login_button = "Войти"
+login_text = "Логин"
+password_text = "Пароль"
+register_button = "Регистрация"
+remember_password = "Запомнить пароль"
+recover_password = "Восстановить пароль"
+entrance_button = "Вход"
+
+[register]
+entrance_page = "Вход"
+register_page = "Регистрация"
+register_button = "Зарегистрироваться"
+login_text = "Логин"
+password_text = "Пароль"
+password_again = "Повторите пароль"
+name_text = "Имя"
+mail_text = "Электронная почта"
+remember_password = "Запомнить пароль"
+
+[home]
+night_vision_on = "Ночной режим включен"
+night_vision_off = "Ночной режим выключен"
+
+[sidebar]
+home_button = "Домой"
+cam_settings_button = "Настройки камер"
+acc_settings_button = "Настройка аккаунта"
+hello_label = "Здравствуйте"
+copyright = "WiFi-Vorota - проект Дорошина Максима ИУ6-43Б"
+
+[camera_settings]
+login_label = "ID камеры"
+password_label = "Пароль"
+wifi_name_label = "Название WiFi"
+wifi_pass_label = "Пароль WiFi"
+button1_label = "Кнопка1"
+button2_label = "Кнопка2"
+button3_label = "Кнопка3"
+button4_label = "Кнопка4"
+save_button = "Сохранить"
+reboot_button = "Перезагрузить камеру"
+update_firmware = "Обновить прошивку"
+direct_control = "Прямое управелние"
+select_cam = "Выбор камеры"
+add_cam = "+"
+delete_cam = "-"
+
+[account_settings]
+save_button = "Сохранить"
+logout_button = "Выйти из аккаунта"
+login_text = "Логин"
+password_text = "Пароль"
+password_again = "Повторите пароль"
+name_text = "Имя"
+mail_text = "Электронная почта"
+
+[recover]
+entrance_button = "Вход"
+register_button = "Регистрация"
+recover_password = "Восстановить пароль"
+mail_text = "Логин"
+
+[firmware_update]
+installed_version="Установленная версия"
+latest_version="Последняя версия"
+firmware_url="URL прошивки"
+update_firmware="Обновить прошивку"
+
+[new_password]
+password_text = "Пароль"
+password_again = "Повторите пароль"
+change_password = "Изменить пароль"
+
+[errors]
+wrong_login="Неверный логин"
+wrong_password="Неверный пароль"
+different_passwords="Пароли не совпадают"
+user_exists="Такой пользователь уже существует"
+login_short="Логин слишком короткий"
+password_short="Пароль слишком короткий"

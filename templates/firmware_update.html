@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block head %}
+<title>WiFiVorota - Update</title>
+<link rel="stylesheet" href="/static/css/settings.css">
+<script type="module" src="/static/js/firmware_update.js"></script>
+{% endblock %}
+
+{% block content %}
+
+{% include 'sidebar.html' %}
+
+<img src="/static/back.png" id="back-button" onclick="window.location='/{{lang_code}}/camera_settings/'">
+<label class="setting_label">
+    {{firmware_update.installed_version}}:
+    <input type="text" class="setting_input input" id="current_version" disabled> </label><br>
+<label class="setting_label">
+    {{firmware_update.latest_version}}:
+    <input type="text" class="setting_input input" id="latest_version" disabled> </label><br>
+<label class="setting_label">
+    {{firmware_update.firmware_url}}:
+    <input type="text" class="setting_input input" id="firmware_url" value="https://vorota.servermaksa.ru/firmware.bin">
+</label><br>
+<button class="setting_input btn" id="update_btn">
+    {{firmware_update.update_firmware}}
+</button>
+<pre id="update_log"></pre>
+{% endblock %}

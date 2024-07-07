@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block head %}
+<title>WiFiVorota - Zoom</title>
+<link rel="stylesheet" href="/static/css/zoom.css">
+<script type="module" src="/static/js/zoom.js"></script>
+{% endblock %}
+
+{% block content %}
+<div id="scroll">
+    <img id="video" src="/static/video-loading.gif" alt="здесь должно быть видео с камеры" class="loading">
+</div>
+{% endblock %}
