@@ -5,10 +5,11 @@ window.onload = async function () {
 }
 
 async function startCopying(){
-    let id = JSON.parse(localStorage.getItem('user_data')).cameras[camera_select.value].id
-    let key = JSON.parse(localStorage.getItem('user_data')).cameras[camera_select.value].key
+    let camera_id = sessionStorage.getItem("selected_camera")
+    if (camera_id == undefined) camera_id = 0
+    let camera = JSON.parse(localStorage.getItem('user_data')).cameras[camera_id]
 
     let btn_id = prompt("введите номер кнопки")
-    let result = await api(id,key,'prog_btn', { id: btn_id }, 30000)
+    let result = await api(camera.id,camera.key,'prog_btn', { id: btn_id }, 30000)
     alert(result)
 }
