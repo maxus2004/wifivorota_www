@@ -2,7 +2,7 @@ import { api } from '/static/js/camera_api.js'
 
 window.onload = async function () {
     document.getElementById('copy_btn').onclick = startCopying
-    document.getElementById('button_select').onselect = onSelect
+    document.getElementById('button_select').onchange = onSelect
 }
 
 function onSelect() {
