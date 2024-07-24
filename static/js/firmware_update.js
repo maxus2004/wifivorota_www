@@ -6,9 +6,11 @@ window.onload = async function () {
     let camera = JSON.parse(localStorage.getItem('user_data')).cameras[camera_id]
 
     let current_version = (await api(camera.id, camera.key, 'info')).get('version')
-    let latest_version = await (await fetch('/firmware_version.txt', { cache: 'no-store' })).text()
+    let versions = await (await fetch('/firmware_versions/', { cache: 'no-store' })).json()
+    latest_version = versions[versions.length-1]
     document.getElementById('current_version').value = current_version
     document.getElementById('latest_version').value = latest_version
+    document.getElementById('firmware_url').value = "https://wifi-vorota.ru/firmware/wifivorota-"+latest_version+".bin"
     document.getElementById('update_btn').onclick = firmwareUpdate
 }
 
