@@ -190,7 +190,7 @@ def firmware_version():
 
 
 @app.route("/firmware/<name>")
-def firmware_version(name):
+def firmware_download(name):
     return send_from_directory("firmware",name)
 
 
