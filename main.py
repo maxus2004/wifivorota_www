@@ -1,9 +1,11 @@
-from flask import Flask, render_template, request, redirect, make_response
+from flask import Flask, render_template, request, redirect, make_response, send_from_directory
 from datetime import timedelta
 import database
 import sessions
 import languages
 import mail
+import os
+import json
 
 
 app = Flask(__name__)
@@ -176,3 +178,21 @@ def set_user_data():
     if login == None:
        return ""
     return database.setUserData(login, request.args.get("user_data"))
+
+
+@app.route("/firmware_versions/")
+def firmware_version():
+    files = [f for f in os.listdir("firmware") if os.path.isfile(os.path.join("firmware", f))]
+    versions = []
+    for file in files:
+        versions.append(file[file.index('-')+1:-4])
+    return json.dumps(versions)
+
+
+@app.route("/firmware/<name>")
+def firmware_version(name):
+    return send_from_directory("firmware",name)
+
+
+if __name__ == "__main__":
+    app.run(host="0.0.0.0",port=5000, threaded=True)

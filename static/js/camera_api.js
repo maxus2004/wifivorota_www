@@ -1,6 +1,6 @@
 export { startStream, api }
 
-var api_server = 'https://vorota.servermaksa.ru'
+var api_server = 'https://wifi-vorota.ru'
 
 async function api(id, password, cmd, params, timeout = 5000) {
     try{
