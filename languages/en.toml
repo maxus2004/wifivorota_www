@@ -45,6 +45,8 @@ program = "Copy remote"
 select_cam = "Select camera"
 add_cam = "+"
 delete_cam = "-"
+select_button_number = "Select button number"
+copy_from_remote = "Copy from remote"
 
 [account_settings]
 save_button = "Save"

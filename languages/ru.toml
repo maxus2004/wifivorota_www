@@ -45,6 +45,9 @@ program = "Скопировать пульт"
 select_cam = "Выбор камеры"
 add_cam = "+"
 delete_cam = "-"
+select_button_number = "Выберите номер кнопки"
+copy_from_remote = "Скопировать с пульта"
+
 
 [account_settings]
 save_button = "Сохранить"

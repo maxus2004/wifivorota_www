@@ -16,7 +16,18 @@
 <table>
     <tr>
         <td>
-            <button class="setting_input btn" id="copy_btn">Скопировать с пульта</button>
+            <select class="setting_input" id="button_select">
+                <option value="">{{camera_settings.select_button_number}}</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+            </select>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <button disabled class="setting_input btn" id="copy_btn">{{camera_settings.copy_from_remote}}</button>
         </td>
     </tr>
 </table>
