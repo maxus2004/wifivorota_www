@@ -7,7 +7,7 @@ async function sendSettings(){
 window.addEventListener('load', () => {
     document.getElementById('reboot_btn').onclick = reboot
     document.getElementById('update_btn').onclick = firmware_update
-    document.getElementById('direct_control_btn').onclick = direct_control
+    document.getElementById('program_btn').onclick = program
     document.getElementById('submit').onclick = save_pressed
     document.getElementById("camera_add").onclick = addCamera
     document.getElementById("camera_delete").onclick = deleteCamera
@@ -136,11 +136,11 @@ function firmware_update() {
     }
 }
 
-function direct_control() {
+function program() {
     if(document.location.toString().includes("/ru/")){
-        window.location = '/ru/direct_control/'
+        window.location = '/ru/programming/'
     }else{
-        window.location = '/en/direct_control/'
+        window.location = '/en/programming/'
     }
 }
 

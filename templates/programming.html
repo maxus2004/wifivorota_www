@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block head %}
+<title>WiFiVorota - Manual Control</title>
+<link rel="stylesheet" href="/static/css/settings.css">
+<script type="module" src="/static/js/programming.js"></script>
+{% endblock %}
+
+{% block content %}
+
+{% include 'sidebar.html' %}
+
+<img src="/static/back.png" id="back-button" onclick="window.location='/{{lang_code}}/camera_settings/'">
+
+
+<table>
+    <tr>
+        <td>
+            <button class="setting_input btn" id="copy_btn">Скопировать с пульта</button>
+        </td>
+    </tr>
+</table>
+
+{% endblock %}

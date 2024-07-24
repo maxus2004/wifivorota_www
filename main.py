@@ -122,12 +122,12 @@ def settings_page(lang_code):
     return render_template("camera_settings.html", user_name=database.getUserName(login), lang_code=lang_code, **languages.getStrings(lang_code))
 
 
-@app.route("/<lang_code>/direct_control/")
+@app.route("/<lang_code>/programming/")
 def direct_control_page(lang_code):
     login = sessions.checkSession(request.cookies.get('session_token'))
     if login == None:
        return redirect(f"/{lang_code}/login/", code=303)
-    return render_template("direct_control.html", user_name=database.getUserName(login), lang_code=lang_code, **languages.getStrings(lang_code))
+    return render_template("programming.html", user_name=database.getUserName(login), lang_code=lang_code, **languages.getStrings(lang_code))
 
 
 @app.route("/<lang_code>/account_settings/", methods = ['POST', 'GET'])
