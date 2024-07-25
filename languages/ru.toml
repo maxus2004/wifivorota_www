@@ -47,7 +47,9 @@ add_cam = "+"
 delete_cam = "-"
 select_button_number = "Выберите номер кнопки"
 copy_from_remote = "Скопировать с пульта"
-
+select_remote_type = "Выберите модель пульта"
+complex_type = "FAAC/BFT"
+standard_type = "другой"
 
 [account_settings]
 save_button = "Сохранить"
