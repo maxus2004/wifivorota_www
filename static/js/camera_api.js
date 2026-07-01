@@ -2,6 +2,8 @@ export { startStream, api }
 
 var api_server = 'https://wifi-vorota.ru'
 
+var current_autoreload_timeout = undefined;
+
 async function api(id, password, cmd, params, timeout = 5000) {
     try{
         let request = `${api_server}/api/?cmd=${cmd}&login=${id}&password=${password}`
@@ -20,6 +22,12 @@ async function api(id, password, cmd, params, timeout = 5000) {
 }
 
 function startStream(img, id, password) {
+    if(current_autoreload_timeout != undefined){
+        clearTimeout(current_autoreload_timeout)
+    }
+
+    console.log(id)
+
     img.onload = null
     img.src = '/static/video-loading.gif'
     img.className = 'loading'
@@ -38,7 +46,7 @@ function startStream(img, id, password) {
         }
     }
 
-    setTimeout(() => {
+    current_autoreload_timeout = setTimeout(() => {
         if (img.className == 'loading') {
             startStream(img, id, password)
         }

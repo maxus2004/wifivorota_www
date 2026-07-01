@@ -3,13 +3,13 @@
     "start_url": "/",
     "icons": [
         {
-            "src": "/static/favicon.png",
+            "src": "/static/favicon-winter.png",
             "sizes": "192x192",
             "type": "image/png",
             "purpose": "maskable any"
         },
         {
-            "src": "/static/favicon-512.png",
+            "src": "/static/favicon-512-winter.png",
             "sizes": "512x512",
             "type": "image/png",
             "purpose": "maskable any"

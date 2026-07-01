@@ -8,6 +8,7 @@ window.addEventListener('load', () => {
     document.getElementById('reboot_btn').onclick = reboot
     document.getElementById('update_btn').onclick = firmware_update
     document.getElementById('program_btn').onclick = program
+    document.getElementById('direct_btn').onclick = direct_control
     document.getElementById('submit').onclick = save_pressed
     document.getElementById("camera_add").onclick = addCamera
     document.getElementById("camera_delete").onclick = deleteCamera
@@ -141,6 +142,14 @@ function program() {
         window.location = '/ru/programming/'
     }else{
         window.location = '/en/programming/'
+    }
+}
+
+function direct_control() {
+    if(document.location.toString().includes("/ru/")){
+        window.location = '/ru/direct_control/'
+    }else{
+        window.location = '/en/direct_control/'
     }
 }
 

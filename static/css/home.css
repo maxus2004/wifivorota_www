@@ -129,7 +129,8 @@ td {
 }
 
 .door_button{
-    height: 5rem;
+    min-height: 5rem;
+    height: 100%;
     font-size: 3rem;
 }
 
@@ -147,6 +148,7 @@ td {
     }
 
     .door_button {
+        min-height:0;
         height: initial;
     }
 

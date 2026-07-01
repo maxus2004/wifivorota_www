@@ -1,11 +1,9 @@
-from flask import Flask, render_template, request, redirect, make_response, send_from_directory
+from flask import Flask, render_template, request, redirect, make_response
 from datetime import timedelta
 import database
 import sessions
 import languages
 import mail
-import os
-import json
 
 
 app = Flask(__name__)
@@ -130,14 +128,6 @@ def direct_control_page(lang_code):
     return render_template("direct_control.html", user_name=database.getUserName(login), lang_code=lang_code, **languages.getStrings(lang_code))
 
 
-@app.route("/<lang_code>/programming/")
-def programming_control_page(lang_code):
-    login = sessions.checkSession(request.cookies.get('session_token'))
-    if login == None:
-       return redirect(f"/{lang_code}/login/", code=303)
-    return render_template("programming.html", user_name=database.getUserName(login), lang_code=lang_code, **languages.getStrings(lang_code))
-
-
 @app.route("/<lang_code>/account_settings/", methods = ['POST', 'GET'])
 def account_settings_page(lang_code):
     login = sessions.checkSession(request.cookies.get('session_token'))
@@ -186,21 +176,3 @@ def set_user_data():
     if login == None:
        return ""
     return database.setUserData(login, request.args.get("user_data"))
-
-
-@app.route("/firmware_versions/")
-def firmware_version():
-    files = [f for f in os.listdir("firmware") if os.path.isfile(os.path.join("firmware", f))]
-    versions = []
-    for file in files:
-        versions.append(file[file.index('-')+1:-4])
-    return json.dumps(versions)
-
-
-@app.route("/firmware/<name>")
-def firmware_download(name):
-    return send_from_directory("firmware",name)
-
-
-if __name__ == "__main__":
-    app.run(host="0.0.0.0",port=5000, threaded=True)

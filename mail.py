@@ -3,7 +3,7 @@ from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
  
 mail_address = "wifi-vorota@mail.ru"
-mail_password = "vNpRTuE74sRvur7TNns4"
+mail_password = "DqFHaThGLfByJQWTAnLm"
   
 def send(address, title, text):
     server = smtplib.SMTP('smtp.mail.ru', 587)
