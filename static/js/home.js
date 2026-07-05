@@ -146,7 +146,7 @@ window.onload = async function () {
 
     let cameras = JSON.parse(localStorage.getItem('user_data')).cameras
 
-    if(cameras != undefined)
+    if(cameras != undefined){
         for (let i = 0; i < cameras.length; i++) {
             let camera = cameras[i]
             var opt = document.createElement('option');
@@ -154,20 +154,19 @@ window.onload = async function () {
             opt.innerHTML = camera.id;
             document.getElementById('cameras').appendChild(opt);
         }
+        if(cameras.length > 1){
+            document.getElementById('prev-next-buttons').style="";
+        }
+    }
 
     let camera_id = sessionStorage.getItem("selected_camera")
     if (camera_id == undefined) camera_id = 0
 
     if(cameras != undefined){
-
         let camera = JSON.parse(localStorage.getItem('user_data')).cameras[camera_id]
-
         document.getElementById('cameras').value = camera_id
-
         api(camera.id, camera.key, 'camera_config', { framesize: 8 })
-
         startStream(document.getElementById('video'), camera.id, camera.key)
-
         updateCameraInfo()
     }else{
         document.getElementById('video').src = '/static/no-camera.png'
